@@ -4,6 +4,7 @@ public abstract class Transaction
 {
 	public BankAccount getSourceAccount()
 	{
+		return null;
 	}
 
 	public void setSourceAccount(
@@ -14,6 +15,7 @@ public abstract class Transaction
 
 	public BankAccount getTargetAccount()
 	{
+		return null;
 	}
 
 	public void setTargetAccount(
@@ -24,6 +26,7 @@ public abstract class Transaction
 
 	public double getAmount()
 	{
+		return 0;
 	}
 
 	public void setAmount(
@@ -34,6 +37,7 @@ public abstract class Transaction
 
 	public java.util.Date getTransactionDate()
 	{
+		return null;
 	}
 
 	public void setTransactionDate(
@@ -59,6 +63,7 @@ public abstract class Transaction
 
 	public boolean isProcessedByFraudTeam()
 	{
+		return false;
 	}
 
 	public void setProcessedByFraudTeam(
@@ -69,6 +74,7 @@ public abstract class Transaction
 
 	public String getRejectionReason()
 	{
+		return null;
 	}
 
 	public void setRejectionReason(

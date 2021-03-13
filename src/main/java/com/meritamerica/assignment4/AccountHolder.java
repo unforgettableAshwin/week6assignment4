@@ -5,6 +5,56 @@ package com.meritamerica.assignment4;
  * Provides getter and setter methods to access account's properties.
  */
 
+
+//Amend the following methods:
+//1. AccountHolder:
+
+//a. CheckingAccount addCheckingAccount(double openingBalance) throws
+//ExceedsCombinedBalanceLimitException
+
+//i. If combined balance limit is exceeded, throw
+//ExceedsCombinedBalanceLimitException
+
+//ii. Should also add a deposit transaction with the opening balance
+
+
+//b. CheckingAccount addCheckingAccount(CheckingAccount checkingAccount)
+//throws ExceedsCombinedBalanceLimitException
+
+//i. If combined balance limit is exceeded, throw
+//ExceedsCombinedBalanceLimitException
+
+//ii. Should also add a deposit transaction with the opening balance
+
+
+//c. SavingsAccount addSavingsAccount(double openingBalance) throws
+//ExceedsCombinedBalanceLimitException
+
+//i. If combined balance limit is exceeded, throw
+//ExceedsCombinedBalanceLimitException
+
+//ii. Should also add a deposit transaction with the opening balance
+
+
+//d. SavingsAccount addSavingsAccount(SavingsAccount savingsAccount) throws
+//ExceedsCombinedBalanceLimitException
+
+//i. If combined balance limit is exceeded, throw
+//ExceedsCombinedBalanceLimitException
+//ii. Should also add a deposit transaction with the opening balance
+
+
+//e. CDAccount addCDAccount(CDOffering offering, double openingBalance)
+//i. Should also add a deposit transaction with the opening balance
+
+
+//f. CDAccount addCDAccount(CDAccount cdAccount)
+//i. Should also add a deposit transaction with the opening balance
+
+
+
+
+
 public class AccountHolder implements Comparable< AccountHolder >
 {
 

@@ -2,11 +2,18 @@ package com.meritamerica.assignment4;
 
 import java.util.Date;
 
-
+//ASSIGNMENT 3
 //static BankAccount readFromString(String accountData) throws ParseException
 //Should throw a java.lang.NumberFormatException if String cannot be correctly parsed
 //String writeToString()
 //
+
+//ASSIGNMENT 4
+//abstract BankAccount
+//a. public void addTransaction(Transaction transaction)
+//b. public List<Transaction> getTransactions()
+
+
 
 public class BankAccount {
 	

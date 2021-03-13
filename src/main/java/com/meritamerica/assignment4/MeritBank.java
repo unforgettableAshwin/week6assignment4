@@ -8,6 +8,45 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
+
+//ADD
+//a. public static double recursiveFutureValue(double amount, int years, double
+//interestRate)
+
+//i. Existing futureValue methods that used to call Math.pow() should now call
+//this method
+
+
+//b. public static boolean processTransaction(Transaction transaction) throws
+//NegativeAmountException, ExceedsAvailableBalanceException,
+//ExceedsFraudSuspicionLimitException
+
+//i. If transaction does not violate any constraints, deposit/withdraw values
+//from the relevant BankAccounts and add the transaction to the relevant
+//BankAccounts
+
+//ii. If the transaction violates any of the basic constraints (negative amount,
+//exceeds available balance) the relevant exception should be thrown and
+//the processing should terminate
+
+//iii. If the transaction violates the $1,000 suspicion limit, it should simply be
+//added to the FraudQueue for future processing
+
+
+//c. public static FraudQueue getFraudQueue()
+
+
+//d. public static BankAccount getBankAccount(long accountId)
+
+
+//i. Return null if account not found
+
+//AMEND
+//a. static boolean readFromFile(String fileName)
+//i. Should also read BankAccount transactions and the FraudQueue
+//b. static boolean writeToFile(String fileName)
+//i. Should also write BankAccount transactions and the FraudQueue
+
 public class MeritBank {
 	
 	public static long accountNumber = 1;
