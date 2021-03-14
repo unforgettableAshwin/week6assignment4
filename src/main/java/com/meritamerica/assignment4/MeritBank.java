@@ -136,7 +136,8 @@ public class MeritBank
 					int numOfCheckTrx = Integer.parseInt( rd.readLine() );
 					for( int t = 0; t < numOfCheckTrx; t++ )
 					{
-						ac.getCheckingAccounts()[t].addTransaction( Transaction.readFromString( rd.readLine() ));
+//						ac.getCheckingAccounts()[t].addTransaction( Transaction.readFromString( rd.readLine() ));
+						
 					}
 
 					numOfCheckAcc-- ;
