@@ -89,7 +89,9 @@ public abstract class Transaction
 		try {
 			DateFormat df = new SimpleDateFormat( "dd/MM/yyyy" );
 			date = df.parse( s[ 3 ] );
-		} catch (ParseException e) {
+		}
+		catch( ParseException e )
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

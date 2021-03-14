@@ -1,5 +1,6 @@
 package com.meritamerica.assignment4;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +22,15 @@ public abstract class BankAccount
 	protected double balance;
 	protected CDOffering offering;
 	protected Date openDate;
+
+	private ArrayList< String > transactionStrings = new ArrayList<>();
+
+	public void transactionStringAdd(
+			String s
+	)
+	{
+		transactionStrings.add( s );
+	}
 
 	public BankAccount()
 	{
@@ -136,7 +146,7 @@ public abstract class BankAccount
 			int years
 	)
 	{
-		double futureBalance = MeritBank.recursiveFutureValue(getBalance(), years, getInterestRate());
+		double futureBalance = MeritBank.recursiveFutureValue( getBalance(), years, getInterestRate() );
 //		double futureBalance = getBalance() * Math.pow( 1 + getInterestRate(), years );
 		return futureBalance;
 	}

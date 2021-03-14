@@ -13,8 +13,7 @@ import javax.annotation.Generated;
 
 public class CheckingAccount extends BankAccount
 {
-
-	private double interestRate = 0.0001;
+	private double interestRate;
 
 	// Sets opening balance
 	CheckingAccount(
