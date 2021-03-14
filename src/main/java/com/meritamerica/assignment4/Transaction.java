@@ -8,7 +8,7 @@ import java.util.Date;
 public abstract class Transaction
 {
 
-	private Date date;
+	private static Date date;
 
 	private static BankAccount targetAccount;
 
@@ -65,7 +65,7 @@ public abstract class Transaction
 			Date date
 	)
 	{
-		this.date = new Date();
+		this.date = date;
 	}
 
 	public String writeToString()
@@ -88,7 +88,7 @@ public abstract class Transaction
 		
 		try {
 			DateFormat df = new SimpleDateFormat( "dd/MM/yyyy" );
-			Date date = df.parse( s[ 3 ] );
+			date = df.parse( s[ 3 ] );
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -100,11 +100,13 @@ public abstract class Transaction
 			if( amount < 0 )
 			{
 //				for (int i = 0; i < this.)
-				Transaction t = new WithdrawTransaction(targetAccount, amount);
+				WithdrawTransaction t = new WithdrawTransaction(targetAccount, amount);
+				t.setTransactionDate(date);
 			}
 			else
 			{
 				DepositTransaction t = new DepositTransaction(targetAccount, amount);
+				t.setTransactionDate(date);
 			}
 		}
 		
@@ -113,6 +115,7 @@ public abstract class Transaction
 //			from 2, to 4,5000,01/05/2020
 					
 			TransferTransaction t = new TransferTransaction(sourceAccount, targetAccount, amount);
+			t.setTransactionDate(date);
 			
 		}
 		
