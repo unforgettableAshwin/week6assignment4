@@ -81,10 +81,10 @@ public class CheckingAccount extends BankAccount
 		return checkAccInfo;
 	}
 
-	@Override public void process() throws NegativeAmountException, ExceedsAvailableBalanceException, ExceedsFraudSuspicionLimitException
-	{
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override public void process() throws NegativeAmountException, ExceedsAvailableBalanceException, ExceedsFraudSuspicionLimitException
+//	{
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }

@@ -8,6 +8,15 @@ import java.util.Arrays;
 
 public class MeritBank
 {
+	
+
+	public static long accountNumber = 1;
+	public static AccountHolder[] accountHolders = new AccountHolder[ 1 ];
+	public static CDOffering[] cdOfferings = new CDOffering[ 0 ];
+	public static CDOffering offering;
+	
+	
+	
 	public static double power(
 			double base,
 			int exponent
@@ -58,21 +67,32 @@ public class MeritBank
 	public static BankAccount getBankAccount(
 			long accountId
 	)
-	{
+	{	
+		for (int i = 0; i < MeritBank.getAccountHolders().length; i++) {
+			if (MeritBank.getAccountHolders()[i] != null) {
+				for (int j = 0; j < MeritBank.getAccountHolders()[i].getNumberOfCheckingAccounts(); j++) {
+					
+					
+				}
+				
+				
+			}
+			
+				
+		}
 		return null;
 
 	}
 
 //AMEND
 
-	public static long accountNumber = 1;
-	public static AccountHolder[] accountHolders = new AccountHolder[ 1 ];
-	public static CDOffering[] cdOfferings = new CDOffering[ 0 ];
-	public static CDOffering offering;
 
 //a. static boolean readFromFile(String fileName)
 //i. Should also read BankAccount transactions and the FraudQueue
 // Read DATABASE from FILE
+	
+	
+	
 	static boolean readFromFile(
 			String fileName
 	)

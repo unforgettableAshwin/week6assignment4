@@ -1,32 +1,24 @@
 package com.meritamerica.assignment4;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class Transaction
 {
-	private byte transactionCode;
 
-	private java.util.Date dateOfTrx;
+	private Date date;
 
-	private BankAccount targetAccount;
+	private static BankAccount targetAccount;
 
-	private BankAccount sourceAccount;
+	private static BankAccount sourceAccount;
 
-	private double amount;
-
-	public byte getTransactionCode()
-	{
-		return transactionCode;
-	}
-
-	public void setTransactionCode(
-			byte transactionCode
-	)
-	{
-		this.transactionCode = transactionCode;
-	}
+	private static double amount;
+	
+	private static Transaction t;
+	
+	
 
 	public BankAccount getSourceAccount()
 	{
@@ -64,16 +56,16 @@ public abstract class Transaction
 		this.amount = amount;
 	}
 
-	public java.util.Date getTransactionDate()
+	public Date getTransactionDate()
 	{
-		return dateOfTrx;
+		return date;
 	}
 
 	public void setTransactionDate(
-			java.util.Date date
+			Date date
 	)
 	{
-		this.dateOfTrx = date;
+		this.date = new Date();
 	}
 
 	public String writeToString()
@@ -85,30 +77,46 @@ public abstract class Transaction
 			String transactionDataString
 	)
 	{
-		Transaction t;
-
 		String[] s = transactionDataString.split( "," );
-		//t.transactionCode = Byte.parseByte( s[ 0 ] );
-		long targetAccount = Long.parseLong( s[ 1 ] );
-		double amount = Double.parseDouble( s[ 2 ] );
-		DateFormat df = new SimpleDateFormat( "dd/MM/yyyy" );
-		Date date = df.parse( s[ 3 ] );
-		if( t.transactionCode < 0 )
+	
+		long sourceAccountAccNum = Long.parseLong( s[ 0 ] );
+		sourceAccount = MeritBank.getBankAccount(sourceAccountAccNum);
+		
+		long targetAccountAccNum = Long.parseLong( s[ 1 ] );
+		targetAccount = MeritBank.getBankAccount(targetAccountAccNum);
+		amount = Double.parseDouble( s[ 2 ] );
+		
+		try {
+			DateFormat df = new SimpleDateFormat( "dd/MM/yyyy" );
+			Date date = df.parse( s[ 3 ] );
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if( sourceAccountAccNum < 0 )
 		{
+			//		-1,10,5000,01/01/2020
 			if( amount < 0 )
 			{
-				//WithdrawTransaction wt = new WithdrawTransaction( , amount);
+//				for (int i = 0; i < this.)
+				Transaction t = new WithdrawTransaction(targetAccount, amount);
 			}
 			else
 			{
-				//DepositTransaction dt = new DepositTransaction();
+				DepositTransaction t = new DepositTransaction(targetAccount, amount);
 			}
 		}
-		else
+		
+		else if( sourceAccountAccNum > 0 )
 		{
-
+//			from 2, to 4,5000,01/05/2020
+					
+			TransferTransaction t = new TransferTransaction(sourceAccount, targetAccount, amount);
+			
 		}
-
+		
+		
 		return t;
 	}
 

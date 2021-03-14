@@ -132,13 +132,14 @@ public abstract class BankAccount
 		}
 	}
 
-//	public double futureValue(
-//			int years
-//	)
-//	{
+	public double futureValue(
+			int years
+	)
+	{
+		double futureBalance = MeritBank.recursiveFutureValue(getBalance(), years, getInterestRate());
 //		double futureBalance = getBalance() * Math.pow( 1 + getInterestRate(), years );
-//		return futureBalance;
-//	}
+		return futureBalance;
+	}
 
 	public void addTransaction(
 			Transaction transaction
